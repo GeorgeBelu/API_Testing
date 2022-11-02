@@ -66,9 +66,19 @@ public abstract class CommonService
         return response;
     }
 
-    protected void deleteRequest(String uri)
+    protected Response deleteRequest(String uri)
     {
-        requestSpecification.expect().statusCode(HttpStatus.SC_NO_CONTENT).log().ifError()
-                .when().delete(prepareUri.apply(uri));
+        Log.info("Sending the DELETE request to the Uri " + BASE_URI + uri);
+
+        Response response = requestSpecification
+                .expect()
+                .statusCode(HttpStatus.SC_OK)
+                .log()
+                .ifError()
+                .when()
+                .delete(prepareUri.apply(uri));
+
+        Log.info("The response body is \n" + response.asPrettyString());
+        return response;
     }
 }
