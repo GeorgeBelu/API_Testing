@@ -35,7 +35,7 @@ public abstract class CommonService
 
     protected Response getRequest(String uri)
     {
-        Log.info("Sending the GET request to the Uri " + BASE_URI + uri);
+        Log.info("Sending the GET request to the Uri " + prepareUri.apply(uri));
 
         Response response = requestSpecification
                 .expect()
@@ -51,7 +51,7 @@ public abstract class CommonService
 
     protected Response postRequest(String uri, Object body)
     {
-        Log.info("Sending the POST request to the Uri " + BASE_URI + uri);
+        Log.info("Sending the POST request to the Uri " + prepareUri.apply(uri));
 
         Response response = requestSpecification
                 .body(body)
@@ -68,7 +68,7 @@ public abstract class CommonService
 
     protected Response deleteRequest(String uri)
     {
-        Log.info("Sending the DELETE request to the Uri " + BASE_URI + uri);
+        Log.info("Sending the DELETE request to the Uri " + prepareUri.apply(uri));
 
         Response response = requestSpecification
                 .expect()

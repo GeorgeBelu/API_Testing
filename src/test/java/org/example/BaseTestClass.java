@@ -1,7 +1,7 @@
 package org.example;
 
 import org.example.entities.Pet;
-import org.example.service.PetService;
+import org.example.service.petservice.PetService;
 import org.example.utils.PetUtils;
 import org.testng.annotations.BeforeClass;
 

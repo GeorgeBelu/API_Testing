@@ -1,6 +1,7 @@
-package org.example.service;
+package org.example.service.petservice;
 
 import io.restassured.response.Response;
+import org.example.service.CommonService;
 import org.example.service.uritemplate.UriTemplate;
 
 public class PetService extends CommonService
