@@ -5,7 +5,6 @@ import org.example.service.uritemplate.UriTemplate;
 
 public class PetService extends CommonService
 {
-
     private static PetService instance;
 
     public static PetService getInstance()
@@ -30,6 +29,5 @@ public class PetService extends CommonService
     public Response deletePetById(UriTemplate uri, int id)
     {
         return super.deleteRequest(uri.getUri(id));
-
     }
 }
